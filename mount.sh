@@ -40,6 +40,10 @@ stop() {
     umount /Volumes/$DIR
 }
 
+status() {
+    networksetup -showpppoestatus $VPN
+}
+
 usage() {
   echo "usage: $PROGNAME start|stop|restart"
 }
@@ -55,6 +59,9 @@ case "$1" in
         ;;
 'stop')
 	stop
+        ;;
+'status')
+	status
         ;;
 'restart')
 	stop

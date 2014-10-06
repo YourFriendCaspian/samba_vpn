@@ -41,11 +41,24 @@ GUIを触るのが恐ろしく面倒だったのでコマンドラインから�
     # directory which you want to mount
     DIR="test_dir"
     
-ゲストユーザーの場合、ユーザ名を「guest」、パスワードを空にすれば繋がります。 
+    $ chmod a+x mount.sh
+    
+ゲストユーザーの場合、ユーザ名を「guest」、パスワードを空にすれば繋がります。   
+最後に実行権限を与えています。    
 
 ## 実行
+### マウント
 startしたい場合はstartを渡し、止めたい場合はstopを渡します。
     
-    $ chmod a+x mount.sh
     $ ./mount.sh start
+    Starting...
+
+VPNの接続に時間がかかる場合は、mountに失敗するかもしれないので、その場合は再実行するか、それでも駄目ならmount.shのsleep時間を伸ばしてみてください。
     
+### アンマウント
+
+    $ ./mount.sh stop
+    Stopping...
+    
+
+調子が悪いと感じたらrestartも可能です。

@@ -1,0 +1,12 @@
+# config file
+
+# VPN name
+VPN="test"
+# IP address of file server 
+SMB="192.168.1.1"
+# User for file server
+USER="guest"
+# If you need
+PASSWORD="password"
+# directory which you want to mount
+DIR="test_directory"

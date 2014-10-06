@@ -48,10 +48,6 @@ usage() {
   echo "usage: $PROGNAME start|stop|restart"
 }
 
-if [ $# -lt 1 ];  then
-  usage
-  exit 255
-fi
 
 case "$1" in
 'start')
@@ -66,6 +62,10 @@ case "$1" in
 'restart')
 	stop
 	start
+        ;;
+*)
+	usage
+        exit 1
         ;;
 esac
 

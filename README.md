@@ -56,9 +56,22 @@ startしたい場合はstartを渡し、止めたい場合はstopを渡します
 VPNの接続に時間がかかる場合は、mountに失敗するかもしれないので、その場合は再実行するか、それでも駄目ならmount.shのsleep時間を伸ばしてみてください。
     
 ### アンマウント
+stopに関しては注意が必要です。  
+何故かnetworksetup -disconnectpppoeserviceが正しく動かないので（誰か動かし方分かる人教えてください）、root権限でpkillしています。   
+そのためsudoのパスワードの入力が必要であることと、他にもVPNを貼っていた場合セッションが切れてしまいます。  
+VPNを一つしか使っていない場合は問題無いと思います。
 
     $ ./mount.sh stop
     Stopping...
     
 
 調子が悪いと感じたらrestartも可能です。
+
+### ステータス確認
+statusと打つと接続されているかどうかを確認できます。
+
+
+    $ ./mount.sh status
+    connected
+    
+

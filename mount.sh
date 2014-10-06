@@ -45,7 +45,7 @@ status() {
 }
 
 usage() {
-  echo "usage: $PROGNAME start|stop|restart"
+  echo "usage: $PROGNAME {start|stop|restart}"
 }
 
 

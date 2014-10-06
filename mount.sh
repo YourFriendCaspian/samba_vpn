@@ -22,9 +22,10 @@ start() {
 
     # Connect VPN
     networksetup -connectpppoeservice $VPN
-    
+    sleep 3
+
     # Mount Samba file server
-    mkdir /Volumes/$DIR
+    mkdir -p /Volumes/$DIR
     mount_smbfs //guest:$PASSWORD@$SMB/$DIR /Volumes/$DIR
 }
 
